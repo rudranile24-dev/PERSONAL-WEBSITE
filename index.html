@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudra Nilesh Nile — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">R<span>.</span>UDRA</div>
+  <div class="nav-links">
+    <a href="#about">About</a><a href="#journey">Journey</a>
+    <a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('resumeModal').classList.add('open')">Resume</button>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <canvas id="stars"></canvas>
+  <div class="hero-inner">
+    <div style="position:relative;z-index:1;">
+      <div class="eyebrow"><span class="ey-dot"></span>Available for opportunities</div>
+      <div class="hero-name">Rudra<br><span class="out">Nilesh</span><br><span class="acc">Nile.</span></div>
+      <div class="hero-role">Software <strong>Engineer</strong> &amp; CS Student</div>
+      <p class="hero-desc">First-year B.Tech CSE student at ICEM, Pune. I write clean code, take ownership, and lead from the front — whether in a hackathon or a course project.</p>
+      <div class="hero-btns">
+        <button class="btn-p" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
+        <button class="btn-g" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="sn">9.1<em></em></div><div class="sl">Sem 1 CGPA</div></div>
+        <div><div class="sn">87<em>%</em></div><div class="sl">10th CBSE</div></div>
+        <div><div class="sn">2<em></em></div><div class="sl">Certificates</div></div>
+        <div><div class="sn">36<em>hr</em></div><div class="sl">Hackathon</div></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;position:relative;z-index:1;">
+      <div style="position:relative;">
+        <div class="badge-float"><span class="bf-dot"></span>Open to internships</div>
+        <div class="profile-card">
+          <div class="ctag">● Profile</div>
+          <div class="photo-ring" onclick="document.getElementById('pInput').click()">
+            <div class="photo-ph" id="pPh">
+              <div class="ph-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div class="ph-lbl">Add Photo</div>
+            </div>
+            <img id="pImg" alt="Rudra Nile">
+          </div>
+          <input type="file" id="pInput" accept="image/*" style="display:none" onchange="handlePhoto(event)">
+          <div class="cname">Rudra Nilesh Nile</div>
+          <div class="crole">B.Tech CSE · ICEM, SPPU · Pune, India</div>
+          <div class="chips">
+            <span class="chip acc">C</span><span class="chip acc">Python</span>
+            <span class="chip hi">HTML</span><span class="chip hi">Git</span>
+            <span class="chip">VS Code</span><span class="chip">Mac OS</span>
+          </div>
+          <div class="cdiv"></div>
+          <div class="cstatus"><span class="csdot"></span><span class="cstext"><strong>ICEM SPPU</strong> — CGPA 9.1 / 10</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <div class="m-item">C Language</div><div class="m-item">Python</div><div class="m-item">HTML</div>
+    <div class="m-item">Git & GitHub</div><div class="m-item">VS Code</div><div class="m-item">DSA</div>
+    <div class="m-item">OOP</div><div class="m-item">HACKNOVA 2026</div><div class="m-item">CGPA 9.1</div>
+    <div class="m-item">Orbit Linker</div><div class="m-item">BV(DU)</div><div class="m-item">ICEM SPPU</div>
+    <div class="m-item">C Language</div><div class="m-item">Python</div><div class="m-item">HTML</div>
+    <div class="m-item">Git & GitHub</div><div class="m-item">VS Code</div><div class="m-item">DSA</div>
+    <div class="m-item">OOP</div><div class="m-item">HACKNOVA 2026</div><div class="m-item">CGPA 9.1</div>
+    <div class="m-item">Orbit Linker</div><div class="m-item">BV(DU)</div><div class="m-item">ICEM SPPU</div>
+  </div>
+</div>
+
+<section id="about" style="background:var(--bg2);">
+  <div class="sec-label">About me</div>
+  <div class="sec-title">The engineer behind the code</div>
+  <div class="bento">
+    <div class="bcard s2">
+      <div class="bl">Who I am</div>
+      <div class="bt">Passionate about leading from the front</div>
+      <p class="bs">I'm <span style="color:var(--accent);">Rudra Nilesh Nile</span>, a first-year B.Tech CSE student at ICEM, Pune (SPPU). I take <span style="color:var(--accent);">ownership</span>, push things to completion, and lead from the front in every team.</p>
+      <p class="bs" style="margin-top:10px;">Deep interests in logical thinking, competitive programming, chess, and exploring new technologies. I've already earned certificates and participated in a 36-hour hackathon in my first year.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;">
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:5px 13px;border-radius:100px;background:rgba(255,255,255,.03);">Takes ownership</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:5px 13px;border-radius:100px;background:rgba(255,255,255,.03);">Leads from front</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:5px 13px;border-radius:100px;background:rgba(255,255,255,.03);">Quick learner</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:5px 13px;border-radius:100px;background:rgba(255,255,255,.03);">Team collaborator</span>
+      </div>
+    </div>
+    <div class="bacc">
+      <div class="bl">Academics</div>
+      <div style="display:flex;align-items:baseline;gap:8px;"><span class="sgpa-num">9.1</span><span style="font-size:13px;color:var(--muted);">/ 10</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Semester 1 CGPA — B.Tech CSE, ICEM SPPU</div>
+      <div class="sgpa-bar"><div class="sgpa-fill"></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+        <div style="background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:11px;">
+          <div style="font-size:18px;font-weight:800;color:#fff;font-family:var(--fd);">87%</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px;">10th CBSE · MSM</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:11px;">
+          <div style="font-size:18px;font-weight:800;color:#fff;font-family:var(--fd);">57%</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px;">12th HSC · DJC</div>
+        </div>
+      </div>
+    </div>
+    <div class="bcard">
+      <div class="bl">Tech stack</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+        <span class="tech-pill tc"><span class="pill-dot"></span>C</span>
+        <span class="tech-pill tpy"><span class="pill-dot"></span>Python</span>
+        <span class="tech-pill thtml"><span class="pill-dot"></span>HTML</span>
+        <span class="tech-pill tgit"><span class="pill-dot"></span>Git</span>
+        <span class="tech-pill th2"><span class="pill-dot"></span>VS Code</span>
+      </div>
+    </div>
+    <div class="bcard">
+      <div class="bl">Hobbies</div>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;">
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Competitive Programming</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Chess</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Cricket</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Drawing &amp; Sketching</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Tech Exploration</span>
+      </div>
+    </div>
+    <div class="bcard">
+      <div class="bl">Soft skills</div>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;">
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Logical Thinking</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Problem Solving</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Self-Motivated</span>
+        <span style="font-size:11px;color:var(--text);border:1px solid var(--line2);padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.03);">Good Communication</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="sec-label">Academic journey</div>
+  <div class="sec-title">My path so far</div>
+  <div class="bento" style="grid-template-columns:1fr 1fr;">
+    <div class="bacc s2">
+      <div class="bl">Full timeline</div>
+      <div class="tl-item">
+        <div class="tl-yr">2025–2029</div>
+        <div>
+          <div class="tl-ttl">B.Tech — Computer Science Engineering</div>
+          <div class="tl-sub">ICEM, SPPU · Pune, Maharashtra</div>
+          <div class="tl-pill"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;"></span>Sem 1 CGPA: 9.1 / 10</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">Jan 2026</div>
+        <div>
+          <div class="tl-ttl">HACKNOVA-2026 — 36-Hour Hackathon</div>
+          <div class="tl-sub">Bharati Vidyapeeth (DU) · Dept. of Management Studies · Navi Mumbai · Theme: Smart Cities &amp; Urban Development</div>
+          <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;">
+            <div class="tl-pill-p" onclick="openCertView('hack')"><span style="width:5px;height:5px;border-radius:50%;background:#9d93f8;display:inline-block;"></span>View Certificate ↗</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">Mar 2026</div>
+        <div>
+          <div class="tl-ttl">7-Days Python Bootcamp — Certificate of Completion</div>
+          <div class="tl-sub">Orbit Linker · Issued by Prof. Yadnyesh Khotre · ID: 1ec2eb65ca9e45699848154164beef98</div>
+          <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;">
+            <div class="tl-pill-p" style="color:#facc15;background:rgba(250,204,21,.1);border-color:rgba(250,204,21,.25);" onclick="openCertView('python')"><span style="width:5px;height:5px;border-radius:50%;background:#facc15;display:inline-block;"></span>View Certificate ↗</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">2023–2024</div>
+        <div>
+          <div class="tl-ttl">12th — Higher Secondary (HSC)</div>
+          <div class="tl-sub">DJC · Maharashtra State Board · 57%</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-yr">2021–2022</div>
+        <div>
+          <div class="tl-ttl">10th — Secondary (CBSE)</div>
+          <div class="tl-sub">MSM · CBSE Board · 87%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--bg2);">
+  <div class="sec-label">Skills &amp; certificates</div>
+  <div class="sec-title">What I know</div>
+  <div class="bento">
+    <div class="bacc">
+      <div class="bl">C Language</div>
+      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:#fff;margin-bottom:14px;">C</div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">Arrays, Pointers, Functions</span><span class="sb-val" style="color:var(--accent);">88%</span></div><div class="sb-track"><div class="sb-fill" style="width:88%;background:var(--accent);"></div></div></div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">File Handling</span><span class="sb-val" style="color:var(--accent);">82%</span></div><div class="sb-track"><div class="sb-fill" style="width:82%;background:var(--accent);"></div></div></div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">Structures</span><span class="sb-val" style="color:var(--accent);">78%</span></div><div class="sb-track"><div class="sb-fill" style="width:78%;background:var(--accent);"></div></div></div>
+    </div>
+    <div class="bcard">
+      <div class="bl">Python</div>
+      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:#fff;margin-bottom:14px;">Python</div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">Variables, Loops, Functions</span><span class="sb-val" style="color:var(--blue);">82%</span></div><div class="sb-track"><div class="sb-fill" style="width:82%;background:var(--blue);"></div></div></div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">Modules &amp; Scripting</span><span class="sb-val" style="color:var(--blue);">76%</span></div><div class="sb-track"><div class="sb-fill" style="width:76%;background:var(--blue);"></div></div></div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">Problem Solving</span><span class="sb-val" style="color:var(--blue);">80%</span></div><div class="sb-track"><div class="sb-fill" style="width:80%;background:var(--blue);"></div></div></div>
+    </div>
+    <div class="bcard">
+      <div class="bl">Web &amp; Tools</div>
+      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:#fff;margin-bottom:14px;">HTML + Git</div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">HTML — Semantic, Forms, Tables</span><span class="sb-val" style="color:var(--purple);">78%</span></div><div class="sb-track"><div class="sb-fill" style="width:78%;background:var(--purple);"></div></div></div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">GitHub (Beginner)</span><span class="sb-val" style="color:var(--purple);">65%</span></div><div class="sb-track"><div class="sb-fill" style="width:65%;background:var(--purple);"></div></div></div>
+      <div class="skill-bar-row"><div class="sb-top"><span class="sb-name">VS Code, Mac OS</span><span class="sb-val" style="color:var(--purple);">85%</span></div><div class="sb-track"><div class="sb-fill" style="width:85%;background:var(--purple);"></div></div></div>
+    </div>
+
+    <div class="bcard s3">
+      <div class="bl">Certificates &amp; achievements</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div>
+          <div class="cert-card python" onclick="openCertView('python')">
+            <div class="cert-card-ico">
+              <svg viewBox="0 0 24 24" style="stroke:#facc15;"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-title">7-Days Python Bootcamp</div>
+              <div class="cert-card-platform">Orbit Linker · Prof. Yadnyesh Khotre</div>
+              <div class="cert-card-details">
+                <span class="cert-detail-pill">Completed</span>
+                <span class="cert-detail-pill">Mar 3, 2026</span>
+              </div>
+              
+            </div>
+            <div class="cert-card-arrow">↗</div>
+          </div>
+        </div>
+        <div>
+          <div class="cert-card hack" onclick="openCertView('hack')">
+            <div class="cert-card-ico">
+              <svg viewBox="0 0 24 24" style="stroke:#9d93f8;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-title">HACKNOVA-2026</div>
+              <div class="cert-card-platform">Bharati Vidyapeeth (DU) · Navi Mumbai</div>
+              <div class="cert-card-details">
+                <span class="cert-detail-pill">36-Hour Hackathon</span>
+                <span class="cert-detail-pill">Jan 10–11, 2026</span>
+              </div>
+              
+            </div>
+            <div class="cert-card-arrow">↗</div>
+          </div>
+        </div>
+        <div>
+          <div class="cert-card upcoming" style="cursor:default;">
+            <div class="cert-card-ico">
+              <svg viewBox="0 0 24 24" style="stroke:var(--muted);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-title">DSA / Algorithms</div>
+              <div class="cert-card-platform">Planning to certify — 2025</div>
+              <div class="cert-card-details"><span class="cert-detail-pill">Upcoming</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="cert-card upcoming" style="cursor:default;">
+            <div class="cert-card-ico">
+              <svg viewBox="0 0 24 24" style="stroke:var(--muted);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <div class="cert-card-body">
+              <div class="cert-card-title">Web Development</div>
+              <div class="cert-card-platform">Planning to certify — 2025</div>
+              <div class="cert-card-details"><span class="cert-detail-pill">Upcoming</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-label">Projects</div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <div class="sec-title">Things I've built</div>
+    <p class="sec-sub" style="max-width:220px;text-align:right;font-size:12px;">Real code · On GitHub</p>
+  </div>
+  <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="proj-card bacc" onclick="window.open('https://github.com/rudranile24-dev','_blank')">
+      <div class="ptop"><span class="ptitle">Study / Task Manager</span><span class="parr">↗</span></div>
+      <div class="pdesc">CLI-based Python task manager — add tasks, set priorities, track study sessions. Live on GitHub.</div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">CLI</span><span class="ptag">File I/O</span></div>
+    </div>
+    <div class="proj-card bcard">
+      <div class="ptop"><span class="ptitle">C — Data Structures Practice</span><span class="parr">↗</span></div>
+      <div class="pdesc">Arrays, pointers, structures, file handling — built from scratch in C as a personal reference project.</div>
+      <div class="ptags"><span class="ptag">C</span><span class="ptag">DSA</span><span class="ptag">Pointers</span></div>
+    </div>
+    <div class="proj-card bcard">
+      <div class="ptop"><span class="ptitle">Portfolio Website</span><span class="parr">↗</span></div>
+      <div class="pdesc">This portfolio — built to practice HTML fundamentals, page structure, forms, and tables.</div>
+      <div class="ptags"><span class="ptag">HTML</span><span class="ptag">CSS</span></div>
+    </div>
+    <div class="proj-card bcard">
+      <div class="ptop"><span class="ptitle">Python Scripting Projects</span><span class="parr">↗</span></div>
+      <div class="pdesc">Collection of Python scripts — variables, loops, functions, modules, and basic automation.</div>
+      <div class="ptags"><span class="ptag">Python</span><span class="ptag">Scripting</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--bg2);text-align:center;">
+  <div class="sec-label" style="justify-content:center;">Get in touch</div>
+  <div style="font-family:var(--fd);font-size:clamp(40px,7vw,84px);font-weight:800;letter-spacing:-3px;line-height:.9;color:#fff;margin:28px 0;">
+    Let's<br><span style="color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.18);">Build</span><br>Together.
+  </div>
+  <p style="font-size:13px;color:var(--muted);max-width:360px;margin:0 auto;line-height:1.8;font-weight:300;">Looking for internships, collaborations, or a great technical conversation. Reach out anytime.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
+    <a class="c-chip" href="/cdn-cgi/l/email-protection#8af8ffeef8ebe4e3e6efb8becaede7ebe3e6a4e9e5e7"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg><span><span class="__cf_email__" data-cfemail="99ebecfdebf8f7f0f5fcabadd9fef4f8f0f5b7faf6f4">[email&#160;protected]</span></span></a>
+    <a class="c-chip" href="https://github.com/rudranile24-dev" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>rudranile24-dev</a>
+    <a class="c-chip" href="https://www.linkedin.com/in/rudra-nile-398768384" target="_blank"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    <button class="btn-p" style="font-size:13px;" onclick="document.getElementById('resumeModal').classList.add('open')">View Resume</button>
+  </div>
+</section>
+
+<div style="padding:24px 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;">
+  <div style="font-family:var(--fd);font-size:13px;font-weight:700;color:var(--muted);">RUDRA NILESH NILE — Software Engineer</div>
+  <div style="font-size:11px;color:var(--dim);">© 2025 · Pune, India · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c7e79687e6d626560693e384c6b616d6560226f6361">[email&#160;protected]</a></div>
+</div>
+
+<!-- CERT VIEW MODAL -->
+<div class="modal-bg" id="certViewModal" onclick="this.classList.remove('open')">
+  <div class="cert-view-box" onclick="event.stopPropagation()">
+    <button class="cvb-close" onclick="document.getElementById('certViewModal').classList.remove('open')">✕</button>
+    <div class="cvb-header">
+      <div class="cvb-label" id="cvbLabel">Certificate</div>
+      <div class="cvb-title" id="cvbTitle">Certificate</div>
+      <div class="cvb-sub" id="cvbSub">Issued to Rudra Nilesh Nile</div>
+    </div>
+    <div class="cvb-img-wrap" id="cvbImgWrap"></div>
+    <div class="cvb-meta" id="cvbMeta"></div>
+    <div class="cvb-footer">
+      <button class="cvb-print-btn" id="cvbDownload">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Save Certificate
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- RESUME MODAL -->
+<div class="resume-modal-bg" id="resumeModal" onclick="closeResume(event)">
+  <div class="resume-sheet" onclick="event.stopPropagation()">
+    <button class="rs-close" onclick="document.getElementById('resumeModal').classList.remove('open')">✕</button>
+    <div class="rs-name">Rudra Nilesh Nile</div>
+    <div class="rs-subtitle">B.Tech Computer Science · First Year · ICEM, SPPU</div>
+    <div class="rs-contact">
+      <div class="rs-contact-item"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg><a href="/cdn-cgi/l/email-protection#acded9c8decdc2c5c0c99e98eccbc1cdc5c082cfc3c1" style="color:#4a4a6a;text-decoration:none;"><span class="__cf_email__" data-cfemail="a6d4d3c2d4c7c8cfcac39492e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a></div>
+      <div class="rs-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.5a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 7517570234</div>
+      <div class="rs-contact-item"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>github.com/rudranile24-dev</div>
+      <div class="rs-contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pune, Maharashtra, India</div>
+    </div>
+    <div class="rs-sec">
+      <div class="rs-sec-title">Education</div>
+      <div class="edu-row"><div><div class="edu-deg">B.Tech — Computer Science Engineering</div><div class="edu-inst">ICEM, SPPU · Pune</div></div><div><div class="edu-yr">2025 – 2029</div><div class="edu-cgpa">CGPA 9.1</div></div></div>
+      <div class="edu-row"><div><div class="edu-deg">Higher Secondary (12th) — HSC</div><div class="edu-inst">DJC · Maharashtra State Board</div></div><div><div class="edu-yr">2024</div><div class="edu-cgpa">57%</div></div></div>
+      <div class="edu-row"><div><div class="edu-deg">Secondary (10th) — CBSE</div><div class="edu-inst">MSM · CBSE Board</div></div><div><div class="edu-yr">2022</div><div class="edu-cgpa">87%</div></div></div>
+    </div>
+    <div class="rs-sec">
+      <div class="rs-sec-title">Skills</div>
+      <div class="skill-cat">Programming Languages</div>
+      <div class="skill-list-text">C Language — Arrays, Pointers, Functions, File Handling, Structures<br>Python — Variables, Loops, Functions, Modules, Basic Scripting<br>HTML — Semantic Tags, Page Structure, Forms, Tables, Links</div>
+      <div class="skill-cat">Tools &amp; Technologies</div>
+      <div class="skill-list-text">Code Editors: VS Code, Code::Blocks, Notepad++ · Version Control: GitHub (Beginner) · Operating Systems: Mac OS</div>
+      <div class="skill-cat">Soft Skills</div>
+      <div class="skill-list-text">Logical Thinking &amp; Problem Solving · Quick Learner &amp; Self-Motivated · Effective Team Collaborator · Good Communication Skills (English, Hindi, Marathi)</div>
+    </div>
+    <div class="rs-sec">
+      <div class="rs-sec-title">Certifications &amp; Achievements</div>
+      <div class="cert-line"><span class="cert-dot"></span>7-Days Python Bootcamp — Orbit Linker · Issued by Prof. Yadnyesh Khotre (March 3, 2026)</div>
+      <div class="cert-line"><span class="cert-dot"></span>HACKNOVA-2026 — 36-Hour Hackathon · Bharati Vidyapeeth (DU), Navi Mumbai (Jan 10–11, 2026)</div>
+      <div class="cert-line"><span class="cert-dot"></span>Achieved CGPA 9.1 in Semester I — B.Tech CSE, ICEM SPPU</div>
+    </div>
+    <div class="rs-sec">
+      <div class="rs-sec-title">Hobbies &amp; Interests</div>
+      <div class="hobby-tags">
+        <span class="hobby-tag">Competitive Programming</span><span class="hobby-tag">Tech Exploration</span>
+        <span class="hobby-tag">Chess</span><span class="hobby-tag">Cricket</span><span class="hobby-tag">Drawing &amp; Sketching</span>
+      </div>
+    </div>
+    <div class="rs-sec" style="border-top:1px solid #e8e8f0;padding-top:16px;margin-top:8px;">
+      <div style="font-size:11px;color:#8a8aaa;line-height:1.6;font-style:italic;">I hereby declare that all information stated above is true and correct to the best of my knowledge and belief.</div>
+    </div>
+    <button class="rs-print-btn" onclick="window.print()">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
